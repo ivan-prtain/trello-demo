@@ -23,5 +23,37 @@
     ],
     "other": {
         "name": "other"
+    },
+    "boardDetails1": {
+        "id": 1,
+        "name": "habadaba",
+        "todos": [
+            {
+                "title": "todo 1",
+                "id": 1,
+                "message": "this needs to be done someday"
+            },
+            {
+                "title": "todo 2",
+                "id": 2,
+                "message": "this needs to be done next year"
+            }
+        ]
+    },
+    "boardDetails2": {
+        "id": 2,
+        "name": "habadaba 2",
+        "todos": [
+            {
+                "title": "todo 1",
+                "id": 1,
+                "message": "this needs to be done someday"
+            },
+            {
+                "title": "todo 2",
+                "id": 2,
+                "message": "this needs to be done next year"
+            }
+        ]
     }
 }

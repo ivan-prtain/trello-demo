@@ -17,5 +17,6 @@ export class BoardsListComponent {
     this.boardsService.getBoards().subscribe(boards => {
       this.boards = boards;
     });
+    console.log(this.boards)
   }
 }

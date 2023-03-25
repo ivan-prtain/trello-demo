@@ -7,6 +7,9 @@ import { HeaderComponent } from './components/header/header.component';
 import { BoardsListComponent } from './components/boards-list/boards-list.component';
 import { BoardComponent } from './components/board/board.component';
 import { Routes, RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
+import { BoardsService } from './services/boards.service';
+import { BoardCardComponent } from './components/board-card/board-card.component';
 
 const appRoutes: Routes = [
   { path: '', component: BoardsListComponent },
@@ -18,14 +21,16 @@ const appRoutes: Routes = [
     AppComponent,
     HeaderComponent,
     BoardsListComponent,
-    BoardComponent
+    BoardComponent,
+    BoardCardComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RouterModule.forRoot(appRoutes, { enableTracing: true })
+    RouterModule.forRoot(appRoutes),
+    HttpClientModule
   ],
-  providers: [],
+  providers: [BoardsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

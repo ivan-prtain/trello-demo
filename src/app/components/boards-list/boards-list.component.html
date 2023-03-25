@@ -1,5 +1,3 @@
-<div>
-    <div routerLink="board/:1" class="board-container">
-        Board
-    </div>
+<div class="board-list">
+    <app-board-card *ngFor="let board of boards" [boardData]="board"></app-board-card>
 </div>

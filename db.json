@@ -1,12 +1,24 @@
 {
-    "tasks": [
+    "boards": [
         {
             "id": 1,
             "name": "habadaba"
         },
         {
             "id": 2,
-            "name": "habadaba2"
+            "name": "habadaba 2"
+        },
+        {
+            "id": 3,
+            "name": "habadaba 3"
+        },
+        {
+            "id": 4,
+            "name": "habadaba 4"
+        },
+        {
+            "id": 5,
+            "name": "habadaba 5"
         }
     ],
     "other": {

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { BoardsService } from 'src/app/services/boards.service';
 
 @Component({
   selector: 'app-boards-list',
@@ -6,5 +7,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./boards-list.component.scss']
 })
 export class BoardsListComponent {
+  boards = [];
 
+  constructor(private boardsService: BoardsService) {
+
+  }
+
+  ngOnInit() {
+    this.boardsService.getBoards().subscribe(boards => {
+      this.boards = boards;
+    });
+  }
 }

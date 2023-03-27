@@ -1,8 +1,11 @@
 <div *ngIf="showModal" class="modal-background">
     <div class="modal-content">
         <button (click)="toggleModal()" class="modal-close">X</button>
-        <div>
-            modal content everybody
+        <div *ngIf="isCreateBoardModal">
+            <form (ngSubmit)="onSubmit()">
+                <input type="text" name="boardName" [(ngModel)]="boardName" placeholder="Add board title" />
+                <input type="submit" value="Create board" />
+            </form>
         </div>
     </div>
 </div>

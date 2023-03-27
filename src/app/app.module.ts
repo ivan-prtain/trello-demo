@@ -8,6 +8,7 @@ import { BoardsListComponent } from './components/boards-list/boards-list.compon
 import { BoardComponent } from './components/board/board.component';
 import { Routes, RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 import { BoardsService } from './services/boards.service';
 import { BoardCardComponent } from './components/board-card/board-card.component';
 import { BoardColumnComponent } from './components/board-column/board-column.component';
@@ -34,7 +35,8 @@ const appRoutes: Routes = [
     BrowserModule,
     AppRoutingModule,
     RouterModule.forRoot(appRoutes),
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [BoardsService],
   bootstrap: [AppComponent]

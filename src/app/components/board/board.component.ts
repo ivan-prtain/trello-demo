@@ -9,19 +9,20 @@ import { BoardService } from 'src/app/services/board.service';
 })
 export class BoardComponent {
   board = {};
+  columns = [];
   boardId = 0;
   constructor(private route: ActivatedRoute, private boardService: BoardService) { }
 
   ngOnInit() {
     this.route.params.subscribe(params => {
-      console.log(params);
       this.boardId = params['id'];
     });
 
     this.boardService.getBoard(this.boardId).subscribe(board => {
       this.board = board;
+      this.columns = board.boardColumns;
       console.log("get board is called")
-      console.log(this.boardId)
+      console.log(this.columns)
       console.log(board)
     })
   }

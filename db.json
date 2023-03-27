@@ -27,32 +27,76 @@
     "boardDetails1": {
         "id": 1,
         "name": "habadaba",
-        "todos": [
+        "boardColumns": [
             {
-                "title": "todo 1",
                 "id": 1,
-                "message": "this needs to be done someday"
+                "name": "todos",
+                "cards": [
+                    {
+                        "title": "todo 1",
+                        "id": 1,
+                        "message": "this needs to be done someday"
+                    },
+                    {
+                        "title": "todo 2",
+                        "id": 2,
+                        "message": "this needs to be done next year"
+                    }
+                ]
             },
             {
-                "title": "todo 2",
                 "id": 2,
-                "message": "this needs to be done next year"
+                "name": "doneTodos",
+                "cards": [
+                    {
+                        "title": "done and over",
+                        "id": 1,
+                        "message": "this was easy"
+                    },
+                    {
+                        "title": "done and medium rare",
+                        "id": 2,
+                        "message": "this was hard"
+                    }
+                ]
             }
         ]
     },
     "boardDetails2": {
         "id": 2,
-        "name": "habadaba 2",
-        "todos": [
+        "name": "sectumsempra",
+        "boardColumns": [
             {
-                "title": "todo 1",
                 "id": 1,
-                "message": "this needs to be done someday"
+                "name": "todos22",
+                "cards": [
+                    {
+                        "title": "todo 22",
+                        "id": 1,
+                        "message": "this needs to be done someday 22"
+                    },
+                    {
+                        "title": "todo 22",
+                        "id": 2,
+                        "message": "this needs to be done next year 22"
+                    }
+                ]
             },
             {
-                "title": "todo 2",
                 "id": 2,
-                "message": "this needs to be done next year"
+                "name": "doneTodos",
+                "cards": [
+                    {
+                        "title": "done and over 22",
+                        "id": 1,
+                        "message": "this was easy 22"
+                    },
+                    {
+                        "title": "done and medium rare 22",
+                        "id": 2,
+                        "message": "this was hard 22"
+                    }
+                ]
             }
         ]
     }

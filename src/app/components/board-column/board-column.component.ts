@@ -16,11 +16,13 @@ export class BoardColumnComponent {
   @Input() columnData: ColumnDataType | undefined;
 
   cards: any;
+  name: any;
 
   ngOnInit() {
     console.log("columndata ", this.columnData);
     if (this.columnData?.cards) {
       this.cards = this.columnData.cards;
+      this.name = this.columnData.name;
       console.log("cards ", this.cards)
     }
   }

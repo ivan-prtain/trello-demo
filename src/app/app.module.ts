@@ -12,6 +12,7 @@ import { BoardsService } from './services/boards.service';
 import { BoardCardComponent } from './components/board-card/board-card.component';
 import { BoardColumnComponent } from './components/board-column/board-column.component';
 import { ColumnCardComponent } from './components/column-card/column-card.component';
+import { ModalComponent } from './components/modal/modal.component';
 
 const appRoutes: Routes = [
   { path: '', component: BoardsListComponent },
@@ -26,7 +27,8 @@ const appRoutes: Routes = [
     BoardComponent,
     BoardCardComponent,
     BoardColumnComponent,
-    ColumnCardComponent
+    ColumnCardComponent,
+    ModalComponent
   ],
   imports: [
     BrowserModule,

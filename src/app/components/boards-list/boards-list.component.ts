@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { BoardsService } from 'src/app/services/boards.service';
+import { UiService } from 'src/app/services/ui.service';
 
 @Component({
   selector: 'app-boards-list',
@@ -9,7 +10,7 @@ import { BoardsService } from 'src/app/services/boards.service';
 export class BoardsListComponent {
   boards = [];
 
-  constructor(private boardsService: BoardsService) {
+  constructor(private boardsService: BoardsService, private UiService: UiService) {
 
   }
 
@@ -18,5 +19,9 @@ export class BoardsListComponent {
       this.boards = boards;
     });
     console.log(this.boards)
+  }
+
+  onNewBoardClick() {
+    this.UiService.toggleModal();
   }
 }

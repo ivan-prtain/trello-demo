@@ -1,4 +1,5 @@
 <div class="board-container">
+    <div>{{boardName}}</div>
     <div class="columns-container">
         <app-board-column *ngFor="let column of columns" [columnData]="column"></app-board-column>
     </div>

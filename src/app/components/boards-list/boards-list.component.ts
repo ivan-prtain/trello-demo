@@ -14,14 +14,17 @@ export class BoardsListComponent {
 
   }
 
-  ngOnInit() {
+  getBoards() {
     this.boardsService.getBoards().subscribe(boards => {
       this.boards = boards;
     });
-    console.log(this.boards)
+  }
+
+  ngOnInit() {
+    this.getBoards();
   }
 
   onNewBoardClick() {
-    this.UiService.toggleModal();
+    this.UiService.toggleModal(undefined, this.getBoards.bind(this));
   }
 }

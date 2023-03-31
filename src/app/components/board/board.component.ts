@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { BoardService } from 'src/app/services/board.service';
+import { ColumnsService } from 'src/app/services/columns.service';
+import { BoardsService } from 'src/app/services/boards.service';
 
 @Component({
   selector: 'app-board',
@@ -8,22 +9,23 @@ import { BoardService } from 'src/app/services/board.service';
   styleUrls: ['./board.component.scss']
 })
 export class BoardComponent {
-  board = {};
+  boardName = ""
   columns = [];
   boardId = 0;
-  constructor(private route: ActivatedRoute, private boardService: BoardService) { }
+  constructor(private route: ActivatedRoute, private columnsService: ColumnsService, private boardService: BoardsService) { }
 
   ngOnInit() {
     this.route.params.subscribe(params => {
       this.boardId = params['id'];
     });
 
-    this.boardService.getBoard(this.boardId).subscribe(board => {
-      this.board = board;
-      this.columns = board.boardColumns;
-      console.log("get board is called")
+    this.columnsService.getColumns(this.boardId).subscribe(column => {
+      this.columns = column;;
       console.log(this.columns)
-      console.log(board)
+    })
+
+    this.boardService.getBoard(this.boardId).subscribe(board => {
+      this.boardName = board.name
     })
   }
 

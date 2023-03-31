@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { CardsService } from 'src/app/services/cards.service';
 
 interface ColumnDataType {
   id: number,
@@ -13,17 +14,21 @@ interface ColumnDataType {
 })
 export class BoardColumnComponent {
 
+  constructor(private cardsService: CardsService) { }
+
   @Input() columnData: ColumnDataType | undefined;
 
   cards: any;
   name: any;
 
   ngOnInit() {
-    console.log("columndata ", this.columnData);
-    if (this.columnData?.cards) {
-      this.cards = this.columnData.cards;
-      this.name = this.columnData.name;
-      console.log("cards ", this.cards)
+    this.name = this.columnData?.name;
+
+    if (this.columnData) {
+      this.cardsService.getCards(this.columnData.id).subscribe(cards => {
+        this.cards = cards;
+        console.log("fetched cards for id", this.columnData?.id, "cards:", this.cards)
+      })
     }
   }
 

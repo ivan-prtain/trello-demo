@@ -12,13 +12,15 @@ export class UiService {
   private modalType: modalType = modalType.board;
   private modalState: any;
   private subject = new Subject<any>();
+  private onSuccess: any;
 
   constructor() { }
 
-  toggleModal(type: modalType = modalType.board): void {
+  toggleModal(type: modalType = modalType.board, onSuccess?: () => void): void {
     this.modalType = type;
+    this.onSuccess = onSuccess;
     this.showModal = !this.showModal;
-    this.modalState = { showModal: this.showModal, modalType: this.modalType }
+    this.modalState = { showModal: this.showModal, modalType: this.modalType, onSuccess: this.onSuccess };
     this.subject.next(this.modalState);
   }
 

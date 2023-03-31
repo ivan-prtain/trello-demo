@@ -31,7 +31,6 @@ export class BoardColumnComponent {
           this.isColumnEmpty = true;
         }
         this.cards = cards;
-        console.log("fetched cards for id", this.columnData?.id, "cards:", this.cards)
       })
     }
   }

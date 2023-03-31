@@ -9,7 +9,7 @@ export class BoardCardComponent {
   @Input() boardData: any;
 
   ngOnInit() {
-    //console.log("boarddata,", this.boardData);
+
   }
 
 }

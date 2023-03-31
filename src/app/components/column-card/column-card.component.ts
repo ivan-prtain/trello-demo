@@ -15,6 +15,5 @@ export class ColumnCardComponent {
   @Input() cardData: CardDataType | undefined;
 
   ngOnInit() {
-    // console.log("carddata ", this.cardData);
   }
 }

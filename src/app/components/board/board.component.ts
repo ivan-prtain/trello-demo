@@ -19,20 +19,17 @@ export class BoardComponent {
   getLists() {
     this.columnsService.getColumns(this.boardId).subscribe(column => {
       this.columns = column;
-      console.log(this.columns)
     })
   }
 
   onNewListClick() {
     const formattedId = Number(this.boardId.toString().substring(1));
-    console.log("formatedid", formattedId)
     this.UiService.toggleModal(modalType.list, this.getLists.bind(this), formattedId);
   }
 
   ngOnInit() {
     this.route.params.subscribe(params => {
       this.boardId = params['id'];
-      console.log(this.boardId)
     });
 
     this.getLists()

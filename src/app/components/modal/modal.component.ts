@@ -40,7 +40,6 @@ export class ModalComponent {
   }
 
   toggleModal(): void {
-    console.log(this.modalType)
     this.uiService.toggleModal();
   }
 
@@ -50,8 +49,6 @@ export class ModalComponent {
         alert("Board name is required");
         return
       }
-
-      console.log(this.boardName)
 
       this.boardsService.createBoard(this.boardName).subscribe(() => {
         this.onSuccess()
@@ -63,8 +60,6 @@ export class ModalComponent {
         alert("List name is required");
         return
       }
-
-      console.log("bitni podaci za submit", this.listName, this.referenceId)
       this.columnsService.createColumn(this.listName, this.referenceId).subscribe(() => {
         this.onSuccess()
         this.toggleModal();

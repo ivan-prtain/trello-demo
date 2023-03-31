@@ -1,4 +1,5 @@
 <div class="column-container">
-    <h2>{{name}}</h2>
+    <h2 class="column-title">{{name}}</h2>
     <app-column-card *ngFor="let card of cards" [cardData]="card"></app-column-card>
+    <div class="empty-state" *ngIf="isColumnEmpty">There is no cards yet...</div>
 </div>

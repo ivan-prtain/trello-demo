@@ -1,10 +1,18 @@
 <div *ngIf="showModal" class="modal-background">
     <div class="modal-content">
         <button (click)="toggleModal()" class="modal-close">X</button>
-        <div *ngIf="isCreateBoardModal">
-            <form (ngSubmit)="onSubmit()">
-                <input type="text" name="boardName" [(ngModel)]="boardName" placeholder="Add board title" />
-                <input type="submit" value="Create board" />
+        <div *ngIf="isCreateBoardModal" class="form-container">
+            <form class="modal-form" (ngSubmit)="onSubmit()">
+                <input class="modal-input" type="text" name="boardName" [(ngModel)]="boardName"
+                    placeholder="Add board title" />
+                <input class="submit-modal" type="submit" value="Create board" />
+            </form>
+        </div>
+        <div *ngIf="isCreateListModal" class="form-container">
+            <form class="modal-form" (ngSubmit)="onSubmit()">
+                <input class="modal-input" type="text" name="listName" [(ngModel)]="listName"
+                    placeholder="Add list title" />
+                <input class="submit-modal" type="submit" value="Create list" />
             </form>
         </div>
     </div>

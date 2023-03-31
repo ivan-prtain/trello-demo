@@ -2,4 +2,37 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 10px;
+    padding: 10px;
+}
+
+.card-btn {
+    background-image: url('../../../assets/images/pen2.png');
+    background-size: cover;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    text-align: center;
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    transition: all ease 0.5s;
+    height: 200px;
+
+    &:hover {
+        cursor: pointer;
+        transform: scale(1.05);
+    }
+}
+
+.card-btn__text {
+    position: absolute;
+    top: 20px;
+    pointer-events: none;
+
+
+}
+
+.card-btn-container {
+    display: flex;
+    position: relative;
+    justify-content: center;
 }

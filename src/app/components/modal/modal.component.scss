@@ -11,20 +11,72 @@
 }
 
 .modal-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #fefefe;
     margin: auto;
     padding: 20px;
-    border: 1px solid #888;
+    border: 1px solid #c5c5c5;
     width: 80%;
+    min-width: 500px;
     border-radius: 10px;
+    min-height: 50px;
+    background-color: rgb(228, 226, 226);
 }
 
 .modal-close {
     position: absolute;
     top: 5px;
     right: 10px;
+    border: none;
+    background-color: transparent;
+    transition: all ease 0.5s;
+
+    &:hover {
+        cursor: pointer;
+        color: red;
+    }
+}
+
+.modal-input {
+    min-height: 30px;
+    border-radius: 10px;
+    border: 1px solid lightblue;
+    padding: 0 10px;
+    width: 75%;
+
+    &:focus {
+        outline: none;
+        box-shadow: 0 2px 0 #ccc;
+    }
+}
+
+
+.submit-modal {
+    background-color: black;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    border: none;
+    border-radius: 10px;
+    margin-left: 20px;
+    padding: 10px;
+
+    margin-right: 40px;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.modal-form {
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-container {
+    width: 100%;
 }

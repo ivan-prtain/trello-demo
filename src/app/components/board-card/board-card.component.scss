@@ -1,4 +1,14 @@
 .board-card {
     height: 200px;
     background-color: greenyellow;
+    border-radius: 10px;
+    padding: 10px;
+    background-image: url('../../../assets/images/wave-image.jpg');
+    background-size: cover;
+    transition: all ease 0.5s;
+
+    &:hover {
+        cursor: pointer;
+        transform: scale(1.02);
+    }
 }

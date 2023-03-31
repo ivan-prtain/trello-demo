@@ -13,15 +13,18 @@ export class UiService {
   private modalState: any;
   private subject = new Subject<any>();
   private onSuccess: any;
+  private referenceId: number = 0;
 
   constructor() { }
 
-  toggleModal(type: modalType = modalType.board, onSuccess?: () => void): void {
+  toggleModal(type: modalType = modalType.board, onSuccess?: () => void, referenceId?: number): void {
     this.modalType = type;
     this.onSuccess = onSuccess;
     this.showModal = !this.showModal;
-    this.modalState = { showModal: this.showModal, modalType: this.modalType, onSuccess: this.onSuccess };
+    this.referenceId = referenceId ? referenceId : 0;
+    this.modalState = { showModal: this.showModal, modalType: this.modalType, onSuccess: this.onSuccess, referenceId: this.referenceId };
     this.subject.next(this.modalState);
+
   }
 
   onToggle(): Observable<any> {

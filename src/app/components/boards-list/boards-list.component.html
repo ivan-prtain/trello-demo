@@ -1,4 +1,9 @@
 <div class="board-list">
     <app-board-card *ngFor="let board of boards" [boardData]="board"></app-board-card>
-    <button (click)="onNewBoardClick()">New board</button>
+    <div class="card-btn-container">
+
+        <button class="card-btn" (click)="onNewBoardClick()"></button>
+        <span class="card-btn__text">New board</span>
+    </div>
+
 </div>

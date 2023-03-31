@@ -20,12 +20,16 @@ export class BoardColumnComponent {
 
   cards: any;
   name: any;
+  isColumnEmpty: boolean = false;
 
   ngOnInit() {
     this.name = this.columnData?.name;
 
     if (this.columnData) {
       this.cardsService.getCards(this.columnData.id).subscribe(cards => {
+        if (cards.length === 0) {
+          this.isColumnEmpty = true;
+        }
         this.cards = cards;
         console.log("fetched cards for id", this.columnData?.id, "cards:", this.cards)
       })

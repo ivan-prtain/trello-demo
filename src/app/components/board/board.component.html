@@ -1,5 +1,9 @@
 <div class="board-container">
-    <div>{{boardName}}</div>
+    <div class="header">
+        <h2 class="board-title">{{boardName}}</h2>
+        <button class="add-list-btn" (click)="onNewListClick()">Add list</button>
+
+    </div>
     <div class="columns-container">
         <app-board-column *ngFor="let column of columns" [columnData]="column"></app-board-column>
     </div>
